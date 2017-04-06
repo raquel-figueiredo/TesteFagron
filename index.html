@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="css/main.css">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body ng-app="myApp" ng-controller="userCtrl">
+
+<div class="w3-container">
+
+<h3>Teste Fagron - Desenvolvedor Front-end</h3>
+
+<table class="w3-table w3-bordered w3-striped">
+  <tr>
+    <th>Editar</th>
+    <th>Nome</th>
+    <th>Sobrenome</th>
+    <th>Data de Nascimento</th>
+    <th>Idade</th>
+    <th>Profissao</th>
+  </tr>
+  <tr ng-repeat="user in users">
+    <td>
+      <button class="w3-btn w3-ripple" ng-click="editUser(user.id)">&#9998; Editar</button>
+    </td>
+     
+    <td>{{ user.Nome }}</td>
+    <td>{{ user.Sobrenome }}</td>
+    <td>{{ user.DataNascimento }}</td>
+    <td>{{ user.Idade }}</td>
+    <td>{{ user.Profissao }}</td>
+  </tr>
+</table>
+<br>
+<button class="w3-btn w3-green w3-ripple" ng-click="editUser('new')">&#9998; Cadastro de Cliente</button>
+<form ng-hide="hideform" name="userForm" ng-submit="submitForm()" novalidate>
+   
+  <h3 ng-show="edit">Novo Cliente:</h3>
+  <h3 ng-hide="edit">Editar infos:</h3>
+  
+    <label>Nome do Cliente:</label>
+    <input class="w3-input w3-border" type="text" ng-model="Nome" ng-disabled="!edit" placeholder="Nome" required>
+
+  
+  <br>
+ 
+    <label>Sobrenome de Cliente:</label>
+    <input class="w3-input w3-border" type="text" ng-model="Sobrenome" ng-disabled="!edit" placeholder="Sobrenome" required>
+  
+  <br>
+    <label>Data Nascimento:</label>
+    <input class="w3-input w3-border" type="date" ng-model="DataNascimento" placeholder="Data de Nascimento">
+  <br>
+    <label>Idade:</label>
+    <input class="w3-input w3-border" type="number" ng-model="Idade" placeholder="Idade">
+  <br>
+  <label>Profissao:</label>
+    <input class="w3-input w3-border" type="text" ng-model="passw2" placeholder="Profissao">
+    <br>
+  <button class="w3-btn w3-green w3-ripple" ng-disabled="error || incomplete">&#10004; Salvar</button>
+
+</form>
+
+</div>
+
+<script src= "js/myUsers.js"></script>
+<script src= "js/main.js"></script>
+
+</body>
+</html>
