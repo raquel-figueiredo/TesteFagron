@@ -1,14 +1,15 @@
+<!--Raquel Figueiredo - Teste para Desenvolvimento Front-end (HTML5, utilizando componentes de AngularJS)-->
 <!DOCTYPE html>
 <html>
 <link rel="stylesheet" href="css/main.css">
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <body ng-app="myApp" ng-controller="userCtrl">
 
-<div class="w3-container">
+<div class="container" style="background: linear-gradient(rgb(54, 139, 226), rgba(25, 157, 234, 0.87));">
 
-<h3>Teste Fagron - Desenvolvedor Front-end</h3>
+<h3 style="color: #fff; font-weight: 700; text-align: center;">Teste Fagron - Desenvolvedor Front-end</h3>
 
-<table class="w3-table w3-bordered w3-striped">
+<table class="table bordered striped" style="background-color: #fff;">
   <tr>
     <th>Editar</th>
     <th>Nome</th>
@@ -19,7 +20,7 @@
   </tr>
   <tr ng-repeat="user in users">
     <td>
-      <button class="w3-btn w3-ripple" ng-click="editUser(user.id)">&#9998; Editar</button>
+      <button class="btn ripple" ng-click="editUser(user.id)">&#9998; Editar</button>
     </td>
      
     <td>{{ user.Nome }}</td>
@@ -29,34 +30,29 @@
     <td>{{ user.Profissao }}</td>
   </tr>
 </table>
+
 <br>
-<button class="w3-btn w3-green w3-ripple" ng-click="editUser('new')">&#9998; Cadastro de Cliente</button>
-<form ng-hide="hideform" name="userForm" ng-submit="submitForm()" novalidate>
-   
+
+<button class="btn green ripple" ng-click="editUser('new')" style="background-color: #3aad53;">&#9998; Cadastro de Cliente</button>
+<form ng-hide="hideform" name="userForm" ng-submit="submitForm()" style="background-color:#f1f1f1; padding: 30px;" novalidate>
   <h3 ng-show="edit">Novo Cliente:</h3>
   <h3 ng-hide="edit">Editar infos:</h3>
-  
     <label>Nome do Cliente:</label>
-    <input class="w3-input w3-border" type="text" ng-model="Nome" ng-disabled="!edit" placeholder="Nome" required>
-
-  
+    <input class="input border" type="text" ng-model="Nome" ng-disabled="!edit" placeholder="Nome" required>
   <br>
- 
     <label>Sobrenome de Cliente:</label>
-    <input class="w3-input w3-border" type="text" ng-model="Sobrenome" ng-disabled="!edit" placeholder="Sobrenome" required>
-  
+    <input class="input border" type="text" ng-model="Sobrenome" ng-disabled="!edit" placeholder="Sobrenome" required>
   <br>
     <label>Data Nascimento:</label>
-    <input class="w3-input w3-border" type="date" ng-model="DataNascimento" placeholder="Data de Nascimento">
+    <input class="input border" type="date" ng-model="DataNascimento" placeholder="Data de Nascimento">
   <br>
     <label>Idade:</label>
-    <input class="w3-input w3-border" type="number" ng-model="Idade" placeholder="Idade">
+    <input class="input border" type="number" ng-model="Idade" placeholder="Idade">
   <br>
   <label>Profissao:</label>
-    <input class="w3-input w3-border" type="text" ng-model="passw2" placeholder="Profissao">
+    <input class="input border" type="text" ng-model="passw2" placeholder="Profissao">
     <br>
-  <button class="w3-btn w3-green w3-ripple" ng-disabled="error || incomplete">&#10004; Salvar</button>
-
+  <button class="btn green ripple" style="background-color: #3aad53;">&#10004; Salvar</button>
 </form>
 
 </div>
